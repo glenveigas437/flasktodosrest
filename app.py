@@ -7,6 +7,7 @@ api = Api(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sqlite.db'
 db=SQLAlchemy()
 
+db.init_app(app)
 
 class ToDoModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
