@@ -7,13 +7,14 @@ api = Api(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sqlite.db'
 db=SQLAlchemy()
 
-db.init_app(app)
+
 
 class ToDoModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     task = db.Column(db.String(200))
     summary = db.Column(db.String(500))
 
+db.init_app(app)
 api = Api(app)
 
 task_post_args = reqparse.RequestParser()
