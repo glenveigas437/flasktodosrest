@@ -15,6 +15,7 @@ class ToDoModel(db.Model):
     summary = db.Column(db.String(500))
 
 db.init_app(app)
+db.create_all()
 api = Api(app)
 
 task_post_args = reqparse.RequestParser()
